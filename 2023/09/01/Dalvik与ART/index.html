@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Title -->
+<title>Fallrain‘s blog</title>
+
+<!-- Icon -->
+<link rel="icon" href="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg">
+
+<!-- Fonts -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null, this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
+
+
+
+<!-- Style -->
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-pure@1.0.1/dist/main.css"> -->
+
+
+
+
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div class="main gt-bg-theme-color-first">
+            <div class="main-content">
+                <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Fallrain‘s blog
+        </div>
+    </a>
+    <button aria-label="Navbar Toggler" class="navbar-toggler" type="button" id="changeNavbar">
+        <i class="gt-c-content-color-first" style="font-size: 18px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18px" fill="currentColor">
+                <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+            </svg>
+        </i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center; ">
+            
+                <div class="nav-item">
+                    <a href="/" class="menu gt-a-link" target="_self">首页</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/archives/" class="menu gt-a-link" target="_self">归档</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/tags/" class="menu gt-a-link" target="_self">标签</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/friends/" class="menu gt-a-link" target="_self">友链</a>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function() {
+        let element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else { 
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+                <div class="post-container">
+    <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
+        <article class="gt-post-content">
+            <h1 class="post-title">(无标题)</h1>
+            <div class="post-info">
+                <time class="post-time gt-c-content-color-first">
+                    · 2023-09-01 ·</time>
+                
+                    
+                
+            </div>
+            <hr>
+            <div class="post-content gt-c-content-color-first">
+                <p><strong>一、Dalvik简单介绍</strong></p>
+<p><strong>1、Dalvik虚拟机介绍</strong></p>
+<p>Dalvik是Google公司自己设计用于Android平台的虚拟机。Dalvik虚拟机是Google等厂商合作开发的Android移动设备平台的核心组成部分之一。它可以支持已转换为 .dex（即Dalvik Executable）格式的Java应用程序的运行，.dex格式是专为Dalvik设计的一种压缩格式，适合内存和处理器速度有限的系统。Dalvik 经过优化，允许在有限的内存中同时运行多个虚拟机的实例，并且 每一个Dalvik 应用作为一个独立的Linux 进程执行。独立的进程可以防止在虚拟机崩溃的时候所有程序都被关闭；</p>
+<p><strong>2、Dalvik诞生消亡史</strong></p>
+<ul>
+<li>Android 1.0，使用Dalvik作为Android虚拟机运行环境；</li>
+<li>Android 2.2，Google在Andriod虚拟机中加入了JIT编译器（Just-In-Time Compiler）；</li>
+<li>Android 4.4，Google带来了全新的虚拟机运行环境ART，此时ART和Dalvik是共存的，用户可以在两者之间进行选择；</li>
+<li>Android 5.0，ART全面取代了Dalvik成为了Android虚拟机运行环境，至此Dalvik退出历史舞台；</li>
+</ul>
+<p><strong>3、Dalvik 特点</strong></p>
+<ul>
+<li>Dalvik虚拟机运行的是Dalvik字节码，Dalvik字节码由Java字节码转换而来，并被打包到一个dex文件中。而JVM运行的是class文件或jar文件；</li>
+<li>加载速度快，dex相比于Jar文件会把所有包含的信息整合在一起，减少了冗余信息。这样就减少I&#x2F;O操作，提高类的查找速度；</li>
+<li>Dalvik虚拟机是基于寄存器，而JVM是基于栈（操作数栈）。虽然基于寄存器执行效率好，但是可移植性差，难跨平台；</li>
+<li>Dalvik虚拟机允许在有限的内存中同时运行多个进程，每一个应用都运行在一个Dalvik虚拟机实例中，拥有独立的进程空间；</li>
+<li>Dalvik虚拟机有共享机制，不同应用之间在运行时可以共享相同的类，拥有更高的效率；</li>
+</ul>
+<p><strong>二、ART虚拟机</strong></p>
+<p><strong>1、ART概念介绍</strong></p>
+<ul>
+<li>ART虚拟机在Android 5.0开始替换Dalvik虚拟机。其处理应用程序执行的方式不同于Dalvik虚拟机，它不使用JIT而是使用了AOT（Ahead-Of-Time），也就是提前编译技术。并且对垃圾收集器也进行了改进和优化；</li>
+<li>ART虚拟机由Android4.4被引入成为可选项，在Android5.0之后替换掉了Dalvik，并且在Android7.0和8.0分别进行了一系列改动</li>
+</ul>
+<p><strong>2、基本概念和名词</strong></p>
+<ul>
+<li>.dex文件：App所有java源代码编译后生成众多class文件，由DX&#x2F;D8，编译为一个&#x2F;多个（multiDex）dex文件，由Android虚拟机编译执行；</li>
+<li>.odex文件：dex文件经过验证和优化后的产物，art下的odex文件包含经过AOT编译后的代码以及dex的完整内容，但Android8.0之后odex中的dex内容移动到了.vdex文件；</li>
+<li>.art文件：art下根据配置文件生成odex文件时同时生成.art文件，主要是为了提升运行时加载odex中热点代码的速度，包含了类信息和odex中热点方法的索引，运行App时会首先根据这个文件来加载odex中已经编译过的代码</li>
+<li>解释器（Interpreter）：用于程序运行时对代码进行逐行解释，翻译成对应平台的机器码执行；</li>
+<li>JIT编译（Just In Time）：由于解释器方式运行太慢引入，对于频繁运行的热点代码（判定标准一般是在某个时间段内执行次数达到某个阈值）进行实时编译（在ART下以方法为粒度）执行，并且缓存JIT编译后的代码在内存中用于下次执行。由于以方法为粒度（ArtMethod）进行编译，JIT编较于解释器可以生成效率更高的代码，运行更快；</li>
+<li>AOT编译（Ahead-Of-Time）：应用安装时全量编译所有代码为本地机器码，运行时直接执行机器码；</li>
+</ul>
+<p><strong>3、ART 如何运作</strong></p>
+<p><strong>①4.4~7.0</strong></p>
+<p>最开始ART只采用AOT编译，在App安装时就编译所有代码存储在本地，打开App直接运行，这样做的优点是应用运行速度变快，缺点也很明显，App安装时间明显变长，而且占用存储空间较大</p>
+<p><strong>②7.0</strong></p>
+<p>Android N之后对于ART进行改动，重新引入了JIT编译，结合使用AOT&#x2F;JIT混合编译，主要机制如下：</p>
+<ul>
+<li>安装时不进行任何编译，前几次运行仅通过解释器解释运行，同时对热点代码进行JIT编译，并将这些代码的相关信息记录在一个配置文件里</li>
+<li>设备处于空闲和充电状态时，编译守护进程读取配置文件对热点代码进行AOT编译并写入到app对应的odex文件中</li>
+<li>再次启动应用后优先使用AOT编译过的代码，否则使用解释器+JIT编译，重复这个过程</li>
+<li>对于一些庞大的APP，比如某宝，有些功能可能你一辈子都不会用到，根据上述策略这部分代码就不会被编译保存，从而减少了存储空间的占用。另外，在系统升级时也避免了全量编译所有现存应用造成的时间空间消耗。</li>
+</ul>
+<p><strong>③8.0</strong></p>
+<p>Android 8.0引入了.vdex文件，它里面包含 APK 的未压缩 DEX 代码，以及一些用于加快验证速度的元数据；</p>
+<p><strong>4、ART垃圾收集器优化</strong></p>
+<ul>
+<li>只有一次GC暂停（Dalvik需要两次）</li>
+<li>并发复制，可减少后台内存使用和碎片</li>
+<li>GC暂停的时间不受堆大小影响</li>
+<li>在清理最近分配的短时对象这种特殊情况中，回收器的总GC时间更短</li>
+<li>优化了垃圾回收的工效，能够更加及时地进行并行垃圾回收，这使得GC_FOR_ALLOC事件在典型用例中极为罕见</li>
+</ul>
+<p><strong>5、ART时间线</strong></p>
+<ul>
+<li>Android 4.4 ，ART和Dalvik是共存的，用户可以在两者之间进行选择。</li>
+<li>Android 5.0，正式取代Dalvik虚拟机成为Android虚拟机运行环境，Dalvik退出历史舞台，AOT取代JIT。</li>
+<li>Android 7.0，JIT回归，采用JIT和AOP混合编译模式。</li>
+<li>ART持续更新优化</li>
+</ul>
+<p><strong>6、Dalvik VM 和 ART VM 有什么区别</strong></p>
+<ul>
+<li>ART早期使用AOT技术，后期使用AOT+JIT混合，而Dalvik使用JIT</li>
+<li>ART支持64位CPU并兼容32位CPU,而Dalvik只支持32位CPU</li>
+<li>ART对垃圾收集器进行了改进优化，提高了吞吐量</li>
+</ul>
+<p><strong>总结</strong></p>
+<p>核心内容就一句话：App安装时不编译代码只校验合法性，运行时通过解释器执行，将运行频繁的代码进行编译放到内存缓存并且记录在本地配置文件，后台线程编译配置文件记录的方法存放到.odex文件，再次运行App时优先读.odex文件中编译后的代码，然后重复这个过程</p>
+
+            </div>
+        </article>
+    </div>
+    <br>
+    
+        <div class="next-prev-post">
+            
+                <div class="prev-post">
+                    <div class="prev gt-c-content-color-first">
+                        上一篇：<a href="/2023/09/01/Java/" 
+                            class="post-title gt-a-link"></a>
+                    </div>
+                </div>
+            
+            
+                <div class="next-post">
+                    <div class="next gt-c-content-color-first">
+                        下一篇：<a href="/2023/09/01/apk%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/" 
+                            class="post-title gt-a-link"></a>
+                    </div>
+                </div>
+            
+        </div>
+    
+    
+
+    
+
+    
+</div>
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="footer-main">
+        <!-- 建议保留版权信息或者添加主题信息到友链，感谢您的理解 -->
+        <!-- 文件位置：layout/_includes/footer.ejs -->
+        <span style="text-align: right; float: right;">Theme <a 
+            href="https://github.com/renbaoshuo/hexo-theme-pure" target="_blank">Pure</a> | Powered by <a 
+            href="https://hexo.io" target="_blank">Hexo</a></span>
+        <span style="text-align: left;">Footer HTML
+</span>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </body>
+</html>

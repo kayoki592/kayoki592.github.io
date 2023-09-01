@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Title -->
+<title>Fallrain‘s blog</title>
+
+<!-- Icon -->
+<link rel="icon" href="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg">
+
+<!-- Fonts -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null, this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
+
+
+
+<!-- Style -->
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-pure@1.0.1/dist/main.css"> -->
+
+
+
+
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div class="main gt-bg-theme-color-first">
+            <div class="main-content">
+                <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Fallrain‘s blog
+        </div>
+    </a>
+    <button aria-label="Navbar Toggler" class="navbar-toggler" type="button" id="changeNavbar">
+        <i class="gt-c-content-color-first" style="font-size: 18px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18px" fill="currentColor">
+                <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+            </svg>
+        </i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center; ">
+            
+                <div class="nav-item">
+                    <a href="/" class="menu gt-a-link" target="_self">首页</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/archives/" class="menu gt-a-link" target="_self">归档</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/tags/" class="menu gt-a-link" target="_self">标签</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/friends/" class="menu gt-a-link" target="_self">友链</a>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function() {
+        let element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else { 
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+                <div class="post-container">
+    <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
+        <article class="gt-post-content">
+            <h1 class="post-title">(无标题)</h1>
+            <div class="post-info">
+                <time class="post-time gt-c-content-color-first">
+                    · 2023-09-01 ·</time>
+                
+                    
+                
+            </div>
+            <hr>
+            <div class="post-content gt-c-content-color-first">
+                <p>Android 安装包常以apk（android Package）、xapk为后缀，本质是一个压缩包，包内存存放运行着应用程序安装必要的所有资源、代码。可直接修改后缀为zip解包。</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>assets</td>
+<td>资源文件，通过context.getAssets();获得，通常存放扩展资源。</td>
+</tr>
+<tr>
+<td>lib</td>
+<td><a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=JNI&spm=1001.2101.3001.7020">JNI</a>二进制动态库，用于与C++互相调用。通过 System.loadLibrary(“”)加载。 代表当前app所用得到的so文件 so文件就是利用底层的c++，c代码实现的（依赖库）</td>
+</tr>
+<tr>
+<td>META-INF</td>
+<td>签名文件夹，应用程序打包后需要签名</td>
+</tr>
+<tr>
+<td>res</td>
+<td>应用程序资源，区别于Assets，一般为应用程序内资源，每个资源会在R类内被标注一个ID，通过getResources().<em>(R.</em>.资源名)、findViewByID等可获得响应的资源对象。</td>
+</tr>
+</tbody></table>
+<h3 id="META-INF文件夹"><a href="#META-INF文件夹" class="headerlink" title="META-INF文件夹"></a>META-INF文件夹</h3><ul>
+<li>META-INF：在Android应用的APK文件中，META-INF文件夹是存放数字签名相关文件的文件夹，包含以下三个文件：</li>
+</ul>
+<ol>
+<li>MANIFEST.MF：MANIFEST.MF文件是一个摘要清单文件，它包含了apk文件中除自己以外所有文件的数字摘要。遍历apk包的所有文件**如果apk文件包被修改，在apk安装校验时。被修改的文件与MANIFEST.MF校验信息不同，程序无法正常安装</li>
+<li>CERT.SF：CERT.SF文件是用于存储通过私钥加密后得到的MANIFEST.MF文件的数字签名信息以及MANIFEST.MF文件中数字摘要的数字签名信息。</li>
+<li>CERT.RSA：CERT.RSA文件包含了CERT.SF文件的数字签名和对文件签名时所使用的数字证书。</li>
+</ol>
+<h3 id="AndroidManifest-xml配置文件"><a href="#AndroidManifest-xml配置文件" class="headerlink" title="AndroidManifest.xml配置文件"></a>AndroidManifest.xml配置文件</h3><p>  AndroidManifest.xml是Android应用程序中最重要的文件之一，它包含了应用程序的基本信息，如应用程序的名称、图标、版本号、权限、组件（Activity、Service、BroadcastReceiver、Content Provider）等等。在应用程序运行时，系统会根据这个文件来管理应用程序的生命周期，启动和关闭应用程序，管理应用程序的组件等等。</p>
+<h4 id="AndroidManifest-xml文件的主要组成部分："><a href="#AndroidManifest-xml文件的主要组成部分：" class="headerlink" title="AndroidManifest.xml文件的主要组成部分："></a>AndroidManifest.xml文件的主要组成部分：</h4><ol>
+<li><p>manifest标签<br> manifest标签是AndroidManifest.xml文件的根标签，它包含了应用程序的基本信息，如包名、版本号、SDK版本、应用程序的名称和图标等等。</p>
+</li>
+<li><p>application标签<br> application标签是应用程序的主要标签，它包含了应用程序的所有组件，如Activity(活动)、Service(服务)、Broadcast Receiver(广播接收器)、Content Provider(内容提供者)等等。在application标签中，也可以设置应用程序的全局属性，如主题、权限等等。</p>
+</li>
+<li><p>activity标签<br> activity标签定义了一个Activity组件，它包含了Activity的基本信息，如Activity的名称、图标、主题、启动模式等等。在activity标签中，还可以定义Activity的布局、Intent过滤器等等。</p>
+</li>
+<li><p>service标签<br> service标签定义了一个Service组件，它包含了Service的基本信息，如Service的名称、图标、启动模式等等。在service标签中，还可以定义Service的Intent过滤器等等。</p>
+</li>
+<li><p>receiver标签<br> receiver标签定义了一个BroadcastReceiver组件，它包含了BroadcastReceiver的基本信息，如BroadcastReceiver的名称、图标、权限等等。在receiver标签中，还可以定义BroadcastReceiver的Intent过滤器等等。</p>
+</li>
+<li><p>provider标签 <strong>(发布者签名)</strong><br> provider标签定义了一个Content Provider组件，它包含了Content Provider的基本信息，如Content Provider的名称、图标、权限等等。在provider标签中，还可以定义Content Provider的URI和Mime Type等等。</p>
+</li>
+<li><p>uses-permission标签 <strong>(权限)</strong><br> uses-permission标签定义了应用程序需要的权限，如访问网络、读取SD卡等等。在应用程序安装时，系统会提示用户授权这些权限。</p>
+</li>
+<li><p>uses-feature标签<br> uses-feature标签定义了应用程序需要的硬件或软件特性，如摄像头、GPS等等。在应用程序安装时，系统会检查设备是否支持这些特性。</p>
+</li>
+</ol>
+<h3 id="classes-dex文件"><a href="#classes-dex文件" class="headerlink" title="classes.dex文件"></a>classes.dex文件</h3><p>classes.dex文件是Android应用程序的核心组件之一，它是应用程序的可执行文件，包含了应用程序的所有Java类和方法。它是一个被编译过的DEX（Dalvik Executable）文件，是Dalvik虚拟机的格式，用于在Android设备上运行Java应用程序。</p>
+<p>方法数超过65535，就会分包处理。未超过就只有一个。安卓所有代码都集中在这里，可通过反编译工具dex2jar转换成jar包，再通过jd-gui查看代码</p>
+<p>在Android开发中，Java源码需要通过Android SDK提供的工具链进行编译，并且会被转换成Dalvik虚拟机可以执行的DEX格式，生成classes.dex文件。这个文件包含了应用程序的所有Java类和方法，可以在Android设备上运行。</p>
+<p>Dalvik虚拟机是Google专门为Android操作系统设计的一个虚拟机，与标准的Java虚拟机JVM有一些区别。Dalvik虚拟机是基于寄存器的，而JVM是基于栈的。这种设计使得Dalvik虚拟机能够更好地适应移动设备的资源限制，提供更高效的执行性能。</p>
+<p>然而，自Android 5.0（Lollipop）起，Android引入了ART（Android Runtime）作为新的运行时环境，取代了之前的Dalvik虚拟机。在ART环境下，应用程序的Java字节码文件仍然会被编译成DEX格式的可执行文件，即classes.dex文件。</p>
+<p>当用户安装应用程序时，系统会将APK文件解压，并将其中的classes.dex文件加载到ART虚拟机中，以执行应用程序的Java代码。classes.dex文件中的Java代码实现了APK的主要逻辑，包括各种功能和业务逻辑的实现。</p>
+<p>总结来说，classes.dex文件是Android应用程序的核心组件之一，包含了应用程序的所有Java类和方法。它是一个被编译过的DEX文件，用于在ART虚拟机上执行Java代码。通过加载和执行classes.dex文件，Android应用程序能够在Android设备上运行并提供各种功能。</p>
+<h3 id="resources-arsc"><a href="#resources-arsc" class="headerlink" title="resources.arsc:"></a>resources.arsc:</h3><p>资源索引表，用来描述具有id值的资源的配置信息。</p>
+
+            </div>
+        </article>
+    </div>
+    <br>
+    
+        <div class="next-prev-post">
+            
+                <div class="prev-post">
+                    <div class="prev gt-c-content-color-first">
+                        上一篇：<a href="/2023/09/01/Dalvik%E4%B8%8EART/" 
+                            class="post-title gt-a-link"></a>
+                    </div>
+                </div>
+            
+            
+                <div class="next-post">
+                    <div class="next gt-c-content-color-first">
+                        下一篇：<a href="/2023/09/01/apk%E6%89%93%E5%8C%85%E5%8F%8A%E5%AE%89%E8%A3%85%E6%B5%81%E7%A8%8B/" 
+                            class="post-title gt-a-link"></a>
+                    </div>
+                </div>
+            
+        </div>
+    
+    
+
+    
+
+    
+</div>
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="footer-main">
+        <!-- 建议保留版权信息或者添加主题信息到友链，感谢您的理解 -->
+        <!-- 文件位置：layout/_includes/footer.ejs -->
+        <span style="text-align: right; float: right;">Theme <a 
+            href="https://github.com/renbaoshuo/hexo-theme-pure" target="_blank">Pure</a> | Powered by <a 
+            href="https://hexo.io" target="_blank">Hexo</a></span>
+        <span style="text-align: left;">Footer HTML
+</span>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </body>
+</html>

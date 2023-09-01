@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Title -->
+<title>Fallrain‘s blog</title>
+
+<!-- Icon -->
+<link rel="icon" href="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg">
+
+<!-- Fonts -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" as="style" onload="this.onload=null, this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"></noscript>
+
+
+
+<!-- Style -->
+
+<link rel="stylesheet" href="/styles/main.css">
+
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-theme-pure@1.0.1/dist/main.css"> -->
+
+
+
+
+
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div class="main gt-bg-theme-color-first">
+            <div class="main-content">
+                <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="/">
+        <img class="user-avatar" src="https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Fallrain‘s blog
+        </div>
+    </a>
+    <button aria-label="Navbar Toggler" class="navbar-toggler" type="button" id="changeNavbar">
+        <i class="gt-c-content-color-first" style="font-size: 18px;">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="18px" fill="currentColor">
+                <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" />
+            </svg>
+        </i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center; ">
+            
+                <div class="nav-item">
+                    <a href="/" class="menu gt-a-link" target="_self">首页</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/archives/" class="menu gt-a-link" target="_self">归档</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/tags/" class="menu gt-a-link" target="_self">标签</a>
+                </div>
+            
+                <div class="nav-item">
+                    <a href="/friends/" class="menu gt-a-link" target="_self">友链</a>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+<script>
+    /* 移动端导航栏展开/收起切换 */
+    document.getElementById('changeNavbar').onclick = function() {
+        let element = document.getElementById('navbarSupportedContent');
+        if (element.style.display === 'none' || element.style.display === '') {
+            element.style.display = 'block';
+        } else { 
+            element.style.display = 'none';
+        }
+    }
+</script>
+
+                <div class="post-container">
+    <div class="post-detail gt-bg-theme-color-second gt-c-content-color-first">
+        <article class="gt-post-content">
+            <h1 class="post-title">(无标题)</h1>
+            <div class="post-info">
+                <time class="post-time gt-c-content-color-first">
+                    · 2023-09-01 ·</time>
+                
+                    
+                
+            </div>
+            <hr>
+            <div class="post-content gt-c-content-color-first">
+                <h3 id="Smali语法学习摘要"><a href="#Smali语法学习摘要" class="headerlink" title="Smali语法学习摘要"></a>Smali语法学习摘要</h3><h1 id="一、Smali-简介"><a href="#一、Smali-简介" class="headerlink" title="一、Smali 简介"></a>一、Smali 简介</h1><p>首先，提到smali就先说下逆向，逆向通常是安全工程师（逆向工程师），系统分析三方APP以及做破解等恶意分子因为某些利益在做（apk二次打包插入广告、破解收费应用、恶意代码植入、剽窃api等）的一种手段。</p>
+<p>当然技术是一把双刃剑，在于使用技术的人而不再技术本身。</p>
+<p>回归正题，Smali是一种宽松式的Jasmin&#x2F;dedexer语法，是Davlik的寄存器语言，语法上和汇编语言相似，Dalvik VM与JVM的最大的区别之一就是Dalvik VM是基于寄存器的。基于寄存器的意思是，在smali里的所有操作都必须经过寄存器来进行。</p>
+<p>Smali，Baksmali分别是冰岛语中编译器，反编译器的叫法。也许你会问为什么是冰岛语呢，因为Dalvik是一个冰岛渔村名字。</p>
+<h1 id="二、Smali-语法"><a href="#二、Smali-语法" class="headerlink" title="二、Smali 语法"></a>二、Smali 语法</h1><h2 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1. 数据类型"></a>1. 数据类型</h2><p>^006356</p>
+<p>Davlik字节码中，寄存器都是32位的，能够支持任何类型，64位类型（Long&#x2F;Double）用2个寄存器表示。<br>Dalvik字节码有两种类型：基本类型；引用类型（包括对象和数组）。</p>
+<h3 id="（1）基本类型"><a href="#（1）基本类型" class="headerlink" title="（1）基本类型"></a>（1）基本类型</h3><table>
+<thead>
+<tr>
+<th>type</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V</td>
+<td>void只能用于返回值类型</td>
+</tr>
+<tr>
+<td>Z</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>B</td>
+<td>byte</td>
+</tr>
+<tr>
+<td>S</td>
+<td>short</td>
+</tr>
+<tr>
+<td>C</td>
+<td>char</td>
+</tr>
+<tr>
+<td>I</td>
+<td>int</td>
+</tr>
+<tr>
+<td>J</td>
+<td>long（64位）</td>
+</tr>
+<tr>
+<td>F</td>
+<td>float</td>
+</tr>
+<tr>
+<td>D</td>
+<td>double（64位）</td>
+</tr>
+</tbody></table>
+<h3 id="（2）引用类型"><a href="#（2）引用类型" class="headerlink" title="（2）引用类型"></a>（2）引用类型</h3><table>
+<thead>
+<tr>
+<th>type</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>L</td>
+<td>对象类型（Lpackage&#x2F;ObjectName; 相当于java中的package.ObjectName;）</td>
+</tr>
+<tr>
+<td>[I</td>
+<td>表示一个整形的一维数组，相当于java的int[];</td>
+</tr>
+<tr>
+<td>[Ljava&#x2F;lang&#x2F;String</td>
+<td>表示一个String的对象数组</td>
+</tr>
+</tbody></table>
+<p>① 对象类型：</p>
+<p>“L“：表示这是一个对象类型<br>”package&#x2F;ObjectName“：该对象所在的包与类名，比如Ljava&#x2F;lang&#x2F;String &#x3D;&gt;java.lang.String<br>”；“：表示对象名称的结束</p>
+<p>② 数组的表示形式：</p>
+<p>” [I “ :表示一个整形的一维数组，相当于java的int[];<br>对于多维数组，只要增加”[“ 就行了，[[I &#x3D;&gt; int[][]; 注：每一维最多255个；</p>
+<p>③ 对象数组的表示形式：</p>
+<p>[Ljava&#x2F;lang&#x2F;String 表示一个String的对象数组；</p>
+<h2 id="2-基础语法"><a href="#2-基础语法" class="headerlink" title="2. 基础语法"></a>2. 基础语法</h2><h3 id="2-1-表达式"><a href="#2-1-表达式" class="headerlink" title="2.1 表达式"></a>2.1 表达式</h3><p>Java源代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public void smaliExpression()&#123;</span><br><span class="line">    //加法运算</span><br><span class="line">    int a = 1;</span><br><span class="line">    double b = 2.5;</span><br><span class="line">    double c = a + b;</span><br><span class="line"></span><br><span class="line">    //减法运算</span><br><span class="line">    double d = b - a;</span><br><span class="line"></span><br><span class="line">    //乘法运算</span><br><span class="line">    double e = a * b;</span><br><span class="line"></span><br><span class="line">    //除法运算</span><br><span class="line">    double f = b / a;</span><br><span class="line"></span><br><span class="line">    //异或运算</span><br><span class="line">    int g = 3;</span><br><span class="line">    int h = a ^ g;</span><br><span class="line"></span><br><span class="line">    //三目运算</span><br><span class="line">    int i = a &gt; b?a:g;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Smali代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line">.method public smaliExpression()V</span><br><span class="line">    .locals 15</span><br><span class="line"></span><br><span class="line">    .line 16</span><br><span class="line">    const/4 v0, 0x1    #1</span><br><span class="line"></span><br><span class="line">    .line 17</span><br><span class="line">    .local v0, &quot;a&quot;:I</span><br><span class="line">    const-wide/high16 v1, 0x4004000000000000L    # 2.5</span><br><span class="line"></span><br><span class="line">    .line 18</span><br><span class="line">    .local v1, &quot;b&quot;:D</span><br><span class="line">    int-to-double v3, v0   //将int型的 1 强转为double的 1.0</span><br><span class="line"></span><br><span class="line">    add-double/2addr v3, v1  //两个double类型相加</span><br><span class="line"></span><br><span class="line">    .line 21</span><br><span class="line">    .local v3, &quot;c&quot;:D</span><br><span class="line">    int-to-double v5, v0</span><br><span class="line"></span><br><span class="line">    sub-double v5, v1, v5    //减法 V5 = V1-V5</span><br><span class="line"></span><br><span class="line">    .line 24</span><br><span class="line">    .local v5, &quot;d&quot;:D</span><br><span class="line">    int-to-double v7, v0</span><br><span class="line"></span><br><span class="line">    mul-double/2addr v7, v1   //乘法</span><br><span class="line"></span><br><span class="line">    .line 27</span><br><span class="line">    .local v7, &quot;e&quot;:D</span><br><span class="line">    int-to-double v9, v0</span><br><span class="line"></span><br><span class="line">    div-double v9, v1, v9   //除法</span><br><span class="line"></span><br><span class="line">    .line 30</span><br><span class="line">    .local v9, &quot;f&quot;:D</span><br><span class="line">    const/4 v11, 0x3</span><br><span class="line"></span><br><span class="line">    .line 31</span><br><span class="line">    .local v11, &quot;g&quot;:I</span><br><span class="line">    xor-int v12, v0, v11  //异或</span><br><span class="line"></span><br><span class="line">     //异或语句，代条件语句</span><br><span class="line">    .line 34</span><br><span class="line">    .local v12, &quot;h&quot;:I</span><br><span class="line">    int-to-double v13, v0</span><br><span class="line"></span><br><span class="line">    cmpl-double v13, v13, v1  //cmpl-double 比较</span><br><span class="line"></span><br><span class="line">    if-lez v13, :cond_0</span><br><span class="line"></span><br><span class="line">    move v13, v0</span><br><span class="line"></span><br><span class="line">    goto :goto_0</span><br><span class="line"></span><br><span class="line">    :cond_0</span><br><span class="line">    move v13, v11       //将寄存器v11值给v13</span><br><span class="line"></span><br><span class="line">    .line 35</span><br><span class="line">    .local v13, &quot;i&quot;:I</span><br><span class="line">    :goto_0</span><br><span class="line">    return-void</span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+<p>整理如下：</p>
+<table>
+<thead>
+<tr>
+<th>java运算符</th>
+<th>samli运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>加法</td>
+<td>add-double&#x2F;2addr</td>
+</tr>
+<tr>
+<td>减法</td>
+<td>sub-double</td>
+</tr>
+<tr>
+<td>乘法</td>
+<td>mul-double&#x2F;2addr</td>
+</tr>
+<tr>
+<td>除法</td>
+<td>div-double</td>
+</tr>
+<tr>
+<td>异或</td>
+<td>xor-int</td>
+</tr>
+<tr>
+<td>三目运算</td>
+<td>条件语句</td>
+</tr>
+</tbody></table>
+<p>可以看到三目运算符本身就是条件语句，所以我们看下详细的条件语句是怎么样的。</p>
+<h3 id="2-2-条件语句"><a href="#2-2-条件语句" class="headerlink" title="2.2 条件语句"></a>2.2 条件语句</h3><p>先上对比代码。<br>java：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public void smaliIf()&#123;</span><br><span class="line">    int a = 1, b = 2;</span><br><span class="line">    int c = 0;</span><br><span class="line">    if(a &gt; b)&#123;</span><br><span class="line">        c = a;</span><br><span class="line">    &#125;</span><br><span class="line">    if(a &lt; b)&#123;</span><br><span class="line">        c = b;</span><br><span class="line">    &#125;</span><br><span class="line">    if(a&gt;=b)&#123;</span><br><span class="line">        c = a;</span><br><span class="line">    &#125;</span><br><span class="line">    if(a &lt;= b)&#123;</span><br><span class="line">        c = b;</span><br><span class="line">    &#125;</span><br><span class="line">    if(a==b)&#123;</span><br><span class="line">        c = a;</span><br><span class="line">    &#125;</span><br><span class="line">    if(a != b)&#123;</span><br><span class="line">        c = b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>samli:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">.method public smaliIf()V</span><br><span class="line">    .locals 3</span><br><span class="line"></span><br><span class="line">    .line 38</span><br><span class="line">    const/4 v0, 0x1</span><br><span class="line"></span><br><span class="line">    .local v0, &quot;a&quot;:I</span><br><span class="line">    const/4 v1, 0x2</span><br><span class="line"></span><br><span class="line">    .line 39</span><br><span class="line">    .local v1, &quot;b&quot;:I</span><br><span class="line">    const/4 v2, 0x0</span><br><span class="line"></span><br><span class="line">    .line 40</span><br><span class="line">    .local v2, &quot;c&quot;:I</span><br><span class="line">    if-le v0, v1, :cond_0</span><br><span class="line"></span><br><span class="line">    .line 41</span><br><span class="line">    move v2, v0</span><br><span class="line"></span><br><span class="line">    .line 43</span><br><span class="line">    :cond_0</span><br><span class="line">    if-ge v0, v1, :cond_1</span><br><span class="line"></span><br><span class="line">    .line 44</span><br><span class="line">    move v2, v1</span><br><span class="line"></span><br><span class="line">    .line 46</span><br><span class="line">    :cond_1</span><br><span class="line">    if-lt v0, v1, :cond_2</span><br><span class="line"></span><br><span class="line">    .line 47</span><br><span class="line">    move v2, v0</span><br><span class="line"></span><br><span class="line">    .line 49</span><br><span class="line">    :cond_2</span><br><span class="line">    if-gt v0, v1, :cond_3</span><br><span class="line"></span><br><span class="line">    .line 50</span><br><span class="line">    move v2, v1</span><br><span class="line"></span><br><span class="line">    .line 52</span><br><span class="line">    :cond_3</span><br><span class="line">    if-ne v0, v1, :cond_4</span><br><span class="line"></span><br><span class="line">    .line 53</span><br><span class="line">    move v2, v0</span><br><span class="line"></span><br><span class="line">    .line 55</span><br><span class="line">    :cond_4</span><br><span class="line">    if-eq v0, v1, :cond_5</span><br><span class="line"></span><br><span class="line">    .line 56</span><br><span class="line">    move v2, v1</span><br><span class="line"></span><br><span class="line">    .line 58</span><br><span class="line">    :cond_5</span><br><span class="line">    return-void</span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+<p>归纳总结整理如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">“if-eq vA, vB, :cond_*” 如果vA等于vB则跳转到:cond_*，否则继续向下执行</span><br><span class="line"></span><br><span class="line">“if-ne vA, vB, :cond_*” 如果vA不等于vB则跳转到:cond_*，否则继续向下执行</span><br><span class="line"></span><br><span class="line">“if-lt vA, vB, :cond_*” 如果vA小于vB则跳转到:cond_*，否则继续向下执行</span><br><span class="line"></span><br><span class="line">“if-ge vA, vB, :cond_*” 如果vA大于等于vB则跳转到:cond_*，否则继续向下执行</span><br><span class="line"></span><br><span class="line">“if-gt vA, vB, :cond_*” 如果vA大于vB则跳转到:cond_*，否则继续向下执行</span><br><span class="line"></span><br><span class="line">“if-le vA, vB, :cond_*” 如果vA小于等于vB则跳转到:cond_*，否则继续向下执行</span><br><span class="line"></span><br><span class="line">“if-eqz vA, :cond_*” 如果vA等于0则跳转到:cond_*，否则继续向下执行</span><br><span class="line"></span><br><span class="line">“if-nez vA, :cond_*” 如果vA不等于0则跳转到:cond_**，否则继续向下执行</span><br><span class="line"></span><br><span class="line">“if-ltz vA, :cond_*” 如果vA小于0则跳转到:cond_*，否则继续向下执行</span><br><span class="line"></span><br><span class="line">“if-gez vA, :cond_*” 如果vA大于等于0则跳转到:cond_*，否则继续向下执行</span><br><span class="line"></span><br><span class="line">“if-gtz vA, :cond_*” 如果vA大于0则跳转到:cond_*，否则继续向下执行</span><br><span class="line"></span><br><span class="line">“if-lez vA, :cond_*” 如果vA小于等于0则跳转到:cond_*，否则继续向下执行</span><br></pre></td></tr></table></figure>
+
+<p>其中的：cond_* 中 “ * ” 是编号（代表1,2,3.。。），在一个方法里如果有多个条件则这个编号不可以重复。</p>
+<h3 id="2-3-循环语句"><a href="#2-3-循环语句" class="headerlink" title="2.3 循环语句"></a>2.3 循环语句</h3><p>还是一样，先上对照代码：<br>java：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public void smaliWhile()&#123;</span><br><span class="line">    //while</span><br><span class="line">    int a = 0;</span><br><span class="line">    while(a&lt;=3)&#123;</span><br><span class="line">        a++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //for</span><br><span class="line">    int b = 0;</span><br><span class="line">    for(int i = 0;i&lt;3;i++)&#123;</span><br><span class="line">        b++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //do...while</span><br><span class="line">    int c = 0;</span><br><span class="line">    do&#123;</span><br><span class="line">        c++;</span><br><span class="line">    &#125;while (c &lt;= 3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>smali：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">.method public smaliWhile()V</span><br><span class="line">    .locals 5</span><br><span class="line"></span><br><span class="line">    .line 62</span><br><span class="line">    const/4 v0, 0x0</span><br><span class="line"></span><br><span class="line">    move v1, v0</span><br><span class="line"></span><br><span class="line">    .line 63</span><br><span class="line">    .local v1, &quot;a&quot;:I</span><br><span class="line">    :goto_0</span><br><span class="line">    const/4 v2, 0x3</span><br><span class="line"></span><br><span class="line">    if-gt v1, v2, :cond_0   //如果a &gt; 3跳转 cond_0</span><br><span class="line"></span><br><span class="line">    .line 64</span><br><span class="line">    add-int/lit8 v1, v1, 0x1   //上面if条件不存在，a自增1</span><br><span class="line"></span><br><span class="line">    goto :goto_0  //循环主体，继续从goto_0向下执行</span><br><span class="line"></span><br><span class="line">    .line 68</span><br><span class="line">    :cond_0</span><br><span class="line">    const/4 v3, 0x0</span><br><span class="line"></span><br><span class="line">    .line 69</span><br><span class="line">    .local v3, &quot;b&quot;:I</span><br><span class="line">    move v4, v3</span><br><span class="line"></span><br><span class="line">    move v3, v0</span><br><span class="line"></span><br><span class="line">    .local v3, &quot;i&quot;:I</span><br><span class="line">    .local v4, &quot;b&quot;:I</span><br><span class="line">    :goto_1</span><br><span class="line">    if-ge v3, v2, :cond_1      // i &gt;= 3</span><br><span class="line"></span><br><span class="line">    .line 70</span><br><span class="line">    add-int/lit8 v4, v4, 0x1   // b++;</span><br><span class="line"></span><br><span class="line">    .line 69</span><br><span class="line">    add-int/lit8 v3, v3, 0x1   //i++;</span><br><span class="line"></span><br><span class="line">    goto :goto_1     //循环主体</span><br><span class="line"></span><br><span class="line">    .line 74</span><br><span class="line">    .end local v3    # &quot;i&quot;:I</span><br><span class="line">    :cond_1</span><br><span class="line">    nop             //表示空操作，什么都不干</span><br><span class="line"></span><br><span class="line">    .line 76</span><br><span class="line">    .local v0, &quot;c&quot;:I</span><br><span class="line">    :cond_2</span><br><span class="line">    add-int/lit8 v0, v0, 0x1</span><br><span class="line"></span><br><span class="line">    .line 77</span><br><span class="line">    if-le v0, v2, :cond_2</span><br><span class="line"></span><br><span class="line">    .line 78</span><br><span class="line">    return-void</span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+<p>所以循环关键点在于循环体开始地方使用 :goto_* 标识，执行循环的地方使用 goto :goto_*，判断是否跳出循环仍然使用上面我们将的条件语句。</p>
+<h3 id="2-4-try-catch语句"><a href="#2-4-try-catch语句" class="headerlink" title="2.4 try-catch语句"></a>2.4 try-catch语句</h3><p>继续上代码<br>java：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public void smaliTryCatch()&#123;</span><br><span class="line">    Object a = null;</span><br><span class="line">    try &#123;</span><br><span class="line">        a = null;</span><br><span class="line">    &#125;catch (Exception e)&#123;</span><br><span class="line">        a.toString();</span><br><span class="line">    &#125;finally &#123;</span><br><span class="line">        a = new Object();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>smali：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">.method public smaliTryCatch()V</span><br><span class="line">    .locals 2</span><br><span class="line">    </span><br><span class="line">    .line 81</span><br><span class="line">    const/4 v0, 0x0</span><br><span class="line"></span><br><span class="line">    .line 83</span><br><span class="line">    .local v0, &quot;a&quot;:Ljava/lang/Object;</span><br><span class="line">    const/4 v0, 0x0</span><br><span class="line"></span><br><span class="line">    .line 87        //v1: new Object();</span><br><span class="line">    new-instance v1, Ljava/lang/Object;   </span><br><span class="line"></span><br><span class="line">    invoke-direct &#123;v1&#125;, Ljava/lang/Object;-&gt;&lt;init&gt;()V</span><br><span class="line"></span><br><span class="line">    move-object v0, v1</span><br><span class="line"></span><br><span class="line">    .line 88</span><br><span class="line">    nop</span><br><span class="line"></span><br><span class="line">    .line 89</span><br><span class="line">    return-void</span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+<p>这里的try-catch很奇怪，好像catch部分执行了nop也就是空操作，是smali不会去管异常吗？我也不清楚了，如果大家有知道的可以告诉我。<br>这里主要就是有一个new Object过程，new一个对象在smali中是怎么样的？就是上面这样的.line87的内容。</p>
+<p>说到这里，基本的语法就先到这里了，下面用一个简单的类文件来看下smali类文件结构。</p>
+<h2 id="3-类文件结构"><a href="#3-类文件结构" class="headerlink" title="3. 类文件结构"></a>3. 类文件结构</h2><p>因为一个类文件的Smali代码比较长，所以我们分开来解释。</p>
+<h3 id="3-1-头信息"><a href="#3-1-头信息" class="headerlink" title="3.1 头信息"></a>3.1 头信息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.class public Lcom/justart/samlidemo/MainActivity;</span><br><span class="line">.super Landroid/app/Activity;</span><br><span class="line">.source &quot;MainActivity.java&quot;</span><br></pre></td></tr></table></figure>
+
+<p>.class 表示类路径 包+类名<br>.super 表示父类的路径和地址<br>.source 表示源码文件名</p>
+<h3 id="3-2-构造方法"><a href="#3-2-构造方法" class="headerlink" title="3.2 构造方法"></a>3.2 构造方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># direct methods</span><br><span class="line">.method public constructor &lt;init&gt;()V</span><br><span class="line">    .locals 0</span><br><span class="line"></span><br><span class="line">    .line 6</span><br><span class="line">    invoke-direct &#123;p0&#125;, Landroid/app/Activity;-&gt;&lt;init&gt;()V</span><br><span class="line"></span><br><span class="line">    return-void</span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+<p>因为源码中我没有重写构造方法，所以默认的无参构造方法里直接调用父类Activity的无参构造方法。</p>
+<h3 id="3-3-其他方法"><a href="#3-3-其他方法" class="headerlink" title="3.3 其他方法"></a>3.3 其他方法</h3><p>这里以Activity的onCreate方法为例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># virtual methods   //表示是一个虚方法</span><br><span class="line">.method protected onCreate(Landroid/os/Bundle;)V</span><br><span class="line">    .locals 1</span><br><span class="line">    .param p1, &quot;savedInstanceState&quot;    # Landroid/os/Bundle;</span><br><span class="line"></span><br><span class="line">    .line 10</span><br><span class="line">    invoke-super &#123;p0, p1&#125;, Landroid/app/Activity;-&gt;onCreate(Landroid/os/Bundle;)V</span><br><span class="line"></span><br><span class="line">    .line 11</span><br><span class="line">    const/high16 v0, 0x7f050000</span><br><span class="line"></span><br><span class="line">    invoke-virtual &#123;p0, v0&#125;, Lcom/justart/samlidemo/MainActivity;-&gt;setContentView(I)V</span><br><span class="line"></span><br><span class="line">    .line 12</span><br><span class="line">    return-void</span><br><span class="line">.end method</span><br></pre></td></tr></table></figure>
+
+<p>（1）方法以 .method开始， .end method 结束；<br>（2）方法第一行最后 V表示返回类型为void，其他返回类型见第一节数据类型；<br>（3）方法参数也遵循smali数据类型，这里表示参数是一个Bundle对象类型；<br>（4）.param 表示 方法的参数，默认参数使用p0表示；<br>（5）最后是方法的返回类型 这里表示返回void。</p>
+<h3 id="3-4-附录"><a href="#3-4-附录" class="headerlink" title="3.4 附录"></a>3.4 附录</h3><p>下面简单总结一下类中常用的一些关键词：</p>
+<table>
+<thead>
+<tr>
+<th>关键词</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.class</td>
+<td>定义类类型 包名+类名</td>
+</tr>
+<tr>
+<td>.super</td>
+<td>定义父类的路径和地址</td>
+</tr>
+<tr>
+<td>.source</td>
+<td>表示源码文件名</td>
+</tr>
+<tr>
+<td>filed</td>
+<td>定义字段</td>
+</tr>
+<tr>
+<td>.method…end method</td>
+<td>定义方法</td>
+</tr>
+<tr>
+<td>.annotation…end annotation</td>
+<td>定义注解</td>
+</tr>
+<tr>
+<td>.implements</td>
+<td>定义接口指令</td>
+</tr>
+<tr>
+<td>.local</td>
+<td>指定了方法内局部变量的个数</td>
+</tr>
+<tr>
+<td>.registers</td>
+<td>指定方法内使用寄存器的总数</td>
+</tr>
+<tr>
+<td>.prologue</td>
+<td>表示方法中代码的开始处</td>
+</tr>
+<tr>
+<td>.line</td>
+<td>表示java源文件中指定行</td>
+</tr>
+<tr>
+<td>.paramter .param</td>
+<td>指定了方法的参数</td>
+</tr>
+</tbody></table>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<li>加载常量指令（const）：</li>
+</ol>
+<p>   const&#x2F;4：将4位整数常量加载到寄存器中。</p>
+<p>   const&#x2F;16：将16位整数常量加载到寄存器中。</p>
+<p>   const：将32位整数常量加载到寄存器中。</p>
+<p>   const-wide：将64位整数常量加载到寄存器中。</p>
+<p>   const-string：将字符串常量加载到寄存器中。</p>
+<p>   const-class：将类引用常量加载到寄存器中。</p>
+<ol start="2">
+<li>寄存器操作指令（move）：</li>
+</ol>
+<p>   -move：将一个寄存器的值复制到另一个寄存器。</p>
+<p>   move&#x2F;from16：类似于move，但是目标寄存器编号在16到31之间。</p>
+<ol start="3">
+<li>算术运算指令（add、sub、mul、div等）：</li>
+</ol>
+<p>   add-int：整数相加。</p>
+<p>   sub-int：整数相减。</p>
+<p>   -mul-int：整数相乘。</p>
+<p>   -div-int：整数相除。</p>
+<ol start="4">
+<li>比较和跳转指令（if-*）：</li>
+</ol>
+<p>   -if-eq：如果两个寄存器中的值相等，则跳转到指定标签处。</p>
+<p>   if-ne：如果两个寄存器中的值不相等，则跳转到指定标签处。</p>
+<p>   if-lt：如果第一个寄存器中的值小于第二个寄存器中的值，则跳转到指定标签处。</p>
+<p>   -if-ge：如果第一个寄存器中的值大于等于第二个寄存器中的值，则跳转到指定标签处。</p>
+<ol start="5">
+<li>方法调用指令（invoke-*）：</li>
+</ol>
+<p>   invoke-static：调用静态方法。</p>
+<p>   invoke-virtual：调用实例方法。</p>
+<p>   invoke-direct：调用私有方法和构造方法。</p>
+<p>   invoke-super：调用父类方法。</p>
+<ol start="6">
+<li>返回指令（return）：</li>
+</ol>
+<p>   return：返回void。</p>
+<p>   return-wide：返回64位整数或双精度浮点数。</p>
+<p>   return-object：返回对象引用。</p>
+<p>   return-void：返回void（在方法末尾使用）。</p>
+<ol start="7">
+<li>对象操作指令：</li>
+</ol>
+<p>   ew-instance：创建一个新的类实例。</p>
+<p>   check-cast：检查对象引用是否可以转换为指定的类。</p>
+<p>   instance-of：检查对象引用是否是指定类或其子类的实例。</p>
+<ol start="8">
+<li>数组操作指令：</li>
+</ol>
+<p>   new-array：创建一个新的数组。</p>
+<p>   aget：从数组中获取元素。</p>
+<p>   aput：将元素存储到数组中。</p>
+<ol start="9">
+<li>其他常见指令：</li>
+</ol>
+<p>   move-result：将前一个方法调用的返回值移动到指定的寄存器中。</p>
+<p>   goto：无条件跳转到指定标签处。</p>
+<p><img src="https://fallrain-1320058055.cos.ap-nanjing.myqcloud.com/picture/202308251757075.png" alt="image.png"></p>
+<p><img src="https://fallrain-1320058055.cos.ap-nanjing.myqcloud.com/picture/202308251758382.png" alt="image.png"><br><img src="https://fallrain-1320058055.cos.ap-nanjing.myqcloud.com/picture/202308251758764.png" alt="image.png"></p>
+
+            </div>
+        </article>
+    </div>
+    <br>
+    
+        <div class="next-prev-post">
+            
+                <div class="prev-post">
+                    <div class="prev gt-c-content-color-first">
+                        上一篇：<a href="/2023/09/01/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91/" 
+                            class="post-title gt-a-link"></a>
+                    </div>
+                </div>
+            
+            
+                <div class="next-post">
+                    <div class="next gt-c-content-color-first">
+                        下一篇：<a href="/2023/09/01/Java/" 
+                            class="post-title gt-a-link"></a>
+                    </div>
+                </div>
+            
+        </div>
+    
+    
+
+    
+
+    
+</div>
+
+                <div class="site-footer gt-c-content-color-first">
+    <div class="footer-main">
+        <!-- 建议保留版权信息或者添加主题信息到友链，感谢您的理解 -->
+        <!-- 文件位置：layout/_includes/footer.ejs -->
+        <span style="text-align: right; float: right;">Theme <a 
+            href="https://github.com/renbaoshuo/hexo-theme-pure" target="_blank">Pure</a> | Powered by <a 
+            href="https://hexo.io" target="_blank">Hexo</a></span>
+        <span style="text-align: left;">Footer HTML
+</span>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </body>
+</html>
